@@ -18,17 +18,8 @@
 
 	
 <body>
-<iframe id="vid" src="" frameborder="0" width=100%; height=100%; allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+<iframe id="vid" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1" frameborder="0" width=100%; height=100%; allow="autoplay; fullscreen" allowfullscreen=""></iframe>
 
-<script type="text/javascript">
-  (() => {
-  const url = new URL(window.location)
-  const vid = url.searchParams.get('v') ?? 'jfKfPfyJRdk'
-  url.searchParams.delete('v')
-  const embedUrl = new URL(`https://www.youtube.com/embed/${vid}?${url.searchParams.toString()}autoplay=1`)
-  document.querySelector('iframe').src = embedUrl.href
-})()
-</script>
 <script>
 // Access the embedded page's iframe element
 var iframe = document.getElementById('vid');
