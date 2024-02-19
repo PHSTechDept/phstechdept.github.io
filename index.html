@@ -2,15 +2,48 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>PHS Tech Dept.</title>
+<title>Untitled Document</title>
 </head>
 <style>
-	body, html
-	{
+	body, html {
 		margin: 0; padding: 0; height: 100%; overflow: hidden;
+		overflow: hidden;
+		background-color: dimgray;
+	}
+	iframe {
+		width: 100vw;
+		height: 100vh;
 	}
 	</style>
+
+	
 <body>
-	<iframe src="https://www.youtube.com/embed/GlBluxunndQ?autoplay=1" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+<iframe id="vid" src="" frameborder="0" width=100%; height=100%; allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+<script type="text/javascript">
+  (() => {
+  const url = new URL(window.location)
+  const vid = url.searchParams.get('v') ?? 'jfKfPfyJRdk'
+  url.searchParams.delete('v')
+  const embedUrl = new URL(`https://www.youtube.com/embed/${vid}?${url.searchParams.toString()}autoplay=1`)
+  document.querySelector('iframe').src = embedUrl.href
+})()
+</script>
+<script>
+// Access the embedded page's iframe element
+var iframe = document.getElementById('vid');
+
+// Access the contentWindow of the iframe
+var iframeWindow = iframe.contentWindow;
+
+// Access the document of the embedded page
+var embeddedDocument = iframeWindow.document;
+
+// Find and modify the element containing the restricted message
+var restrictedMessageElement = embeddedDocument.querySelector('.ytp-error-content');
+if (restrictedMessageElement) {
+    restrictedMessageElement.style.display = 'none'; // Hide the restricted message
+}
+</script>
 </body>
 </html>
