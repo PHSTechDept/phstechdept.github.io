@@ -22,7 +22,7 @@
 <script>
 
 var url1 = "https://player.twitch.tv/?channel=firstinrobotics&parent=";
-var parms = window.location.hostname;
+var parms = window.parent.location.hostname;
 var finalurl = url1+parms+"&muted=true&autoplay=true";
 console.log(finalurl);
 
