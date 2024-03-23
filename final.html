@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+<style>
+	body, html {
+		margin: 0; padding: 0; height: 100%; overflow: hidden;
+		overflow: hidden;
+		background-color: dimgray;
+	}
+	iframe {
+		width: 100vw;
+		height: 100vh;
+	}
+	</style>
+
+	
+<body>
+
+<script>
+
+var url1 = "https://player.twitch.tv/?channel=firstinrobotics&parent=";
+var parms = window.location.hostname;
+var finalurl = url1+parms+"&muted=true&autoplay=true";
+console.log(finalurl);
+
+var before= "<iframe src=";
+var url2 = " frameborder='0' width=100%; height=100%; allow='autoplay; fullscreen' allowfullscreen=''></iframe>";
+
+var htmlcode = before+finalurl+url2;
+
+console.log(htmlcode);
+
+
+var iframe = document.createElement('iframe');
+var html = htmlcode;
+document.body.appendChild(iframe);
+iframe.setAttribute("frameborder","0")
+iframe.contentWindow.document.open();
+iframe.contentWindow.document.write(html);
+iframe.contentWindow.document.close();
+
+
+</script>
+
+
+</body>
+</html>
